@@ -1,0 +1,38 @@
+ja:
+  layouts:
+    application:
+      title:			"タイトル"  #"もったいないから環境問題へ|チャリティオンラインバザー"
+      home:  			"ホーム"
+      about:			"当サイトについて"
+      sell: 			"物品を売る"
+      search:			"物品を探す"
+      products:   "商品を管理する"
+      contact:		"お問い合わせ"
+      address:    "〒XXX-XXXX 東京都港区XXXX 3-2-4"
+
+  products:
+    # Common
+    column:
+      name:  		"名前"
+      description: "概要"
+      image_url:	 "画像URL"
+      note: 		"備考"
+      price: 		"値段(円)"
+      status: 	"状態"
+    action:
+      back:			"一覧"
+      new:			"登録"
+      edit:			"編集"
+      cancel:   "キャンセル"
+      destroy:	"削除"
+    dialog:
+      confirm:  "削除してもよろしいですか？"
+    # Views
+    index:
+      title: 		"商品一覧"
+    new:
+      title:    "商品登録"
+    show:
+      title: 		"商品詳細"
+    edit:
+      title:    "商品編集" 

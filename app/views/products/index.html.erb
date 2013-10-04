@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1><%=t '.title' %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t 'products.column.name' %></th>
+      <th><%= t 'products.column.description' %></th>
+      <th><%= t 'products.column.image_url' %></th>
+      <th><%= t 'products.column.note' %></th>
+      <th><%= t 'products.column.price' %></th>
+      <th><%= t 'products.column.status' %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.name, product_path(product) %></td>
+        <td><%= truncate product.description, length: 5 %></td>
+        <td><%= product.image_url %></td>
+        <td><%= product.note %></td>
+        <td><%= product.price %></td>
+        <td><%= product.status %></td>
+        <td>
+          <%= link_to t('products.action.edit'), edit_product_path(product), :class => 'btn' %>
+          <%= link_to t('products.action.destroy'),
+                      product_path(product),
+                      :method => :delete,
+                      :data => { :confirm => t('products.dialog.confirm') },
+                      :class => 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('products.action.new'), new_product_path, :class => 'btn btn-primary' %>
