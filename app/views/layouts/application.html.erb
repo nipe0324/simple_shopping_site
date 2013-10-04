@@ -1,14 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="jp">
 <head>
-  <title>CharityBazaar</title>
+  <title><%= t '.title' %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="container-fluid">
+  <header>
+		<div id="ttl">
+			<h1> <%= t('.title') %></h1>
+		</div>
+		<div class="navbar">
+			<div class="navbar-inner">
+				<ul class="nav">
+					<li><a href="/"><%= t '.home' %></a></li>
+					<li><a href="/about/"><%= t '.about' %></a></li>
+					<li><a href="/sell/"><%= t '.sell' %></a></li>
+					<li><a href="/search/"><%= t '.search' %></a></li>
+					<li><a href="/products/"><%= t '.products' %></a></li>
+					<li><a href="/contact/"><%= t '.contact' %></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</header>
 
-<%= yield %>
+	<div class="row-fluid">
+		<div id="contents" class="span8">
+		  <%= yield %>
+	  </div>
+
+	  <aside class="span4">
+	 		<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+			  <div class="well sidebar-nav">
+			    <ul class="nav">
+			      <li>Sidebar</li>
+			      <li class="active"><a href="#">Link</a></li>
+			      <li><a href="#">Link</a></li>
+			      <li><a href="#">Link</a></li>
+			      <li>Sidebar</li>
+			      <li><a href="#">Link</a></li>
+			      <li><a href="#">Link</a></li>
+			      <li><a href="#">Link</a></li>
+			      <li>Sidebar</li>
+			      <li><a href="#">Link</a></li>
+			      <li><a href="#">Link</a></li>
+			    </ul>
+			  </div><!--/.well -->
+			</div><!--/span-->
+	  </aside>
+	</div><!-- /#.row -->
+
+  <hr />
+  <footer>
+  	<p id="copyright">Copyright &copy; ****** All Rights Reserved.<p>
+	</footer>
 
 </body>
 </html>
