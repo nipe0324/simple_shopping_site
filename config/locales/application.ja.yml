@@ -21,6 +21,7 @@ ja:
       status: 	"状態"
     action:
       back:			"一覧"
+      show:     "詳細"
       new:			"登録"
       edit:			"編集"
       cancel:   "キャンセル"

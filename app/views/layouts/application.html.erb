@@ -6,7 +6,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="container-fluid">
+<body class='<%= controller.controller_name %> container-fluid'>
   <header>
 		<div id="ttl">
 			<h1> <%= t('.title') %></h1>
