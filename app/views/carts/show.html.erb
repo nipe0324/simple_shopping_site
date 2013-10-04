@@ -1,0 +1,9 @@
+<div class="page-header">
+  <h1><%=t '.title' %></h1>
+</div>
+
+<ul>
+<% @cart.order_details.each do |order_detail| %>
+  <li><%= order_detail.product.name %></li>
+<% end %>
+</ul>

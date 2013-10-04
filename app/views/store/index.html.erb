@@ -9,6 +9,8 @@
 		<p><%= sanitize(product.description) %></p>
 		<div class="price_line">
 			<span class="price"><%= product.price %></span>
+			<%= link_to t('.cart_in'), order_details_path(product_id: product),
+			  method: :post, :class => 'btn btn-primary' %>
 		</div>
 	</div>
 <% end %>

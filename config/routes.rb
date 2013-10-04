@@ -1,4 +1,8 @@
 CharityBazaar::Application.routes.draw do
+  resources :order_details
+
+  resources :carts
+
 #  get "home/index"  # comment out, as its path dupplicates with home_path 
   get "store/index"
   resources :products
