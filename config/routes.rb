@@ -1,11 +1,16 @@
 CharityBazaar::Application.routes.draw do
+  resources :order_details
+
+  resources :carts, only: [:show, :destroy] # = except: [:index, :new, :edit, :create, :update]
+#  get "home/index"  # comment out, as its path dupplicates with home_path 
+  get "store/index", as: :store
   resources :products
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
