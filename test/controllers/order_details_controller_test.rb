@@ -3,6 +3,7 @@ require 'test_helper'
 class OrderDetailsControllerTest < ActionController::TestCase
   setup do
     @order_detail = order_details(:one)
+    @product = products(:one)
   end
 
   test "should get index" do
@@ -18,10 +19,10 @@ class OrderDetailsControllerTest < ActionController::TestCase
 
   test "should create order_detail" do
     assert_difference('OrderDetail.count') do
-      post :create, order_detail: { cart_id: @order_detail.cart_id, product_id: @order_detail.product_id }
+      post :create, order_detail: { product_id: @product.id }
     end
 
-    assert_redirected_to order_detail_path(assigns(:order_detail))
+    assert_redirected_to cart_path(assigns(:order_detail))
   end
 
   test "should show order_detail" do

@@ -4,7 +4,7 @@ CharityBazaar::Application.routes.draw do
   resources :carts
 
 #  get "home/index"  # comment out, as its path dupplicates with home_path 
-  get "store/index"
+  get "store/index", as: :store
   resources :products
 
   # The priority is based upon order of creation: first created -> highest priority.

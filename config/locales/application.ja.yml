@@ -10,6 +10,18 @@ ja:
       contact:		"お問い合わせ"
       address:    "〒XXX-XXXX 東京都港区XXXX 3-2-4"
 
+  # Controllers
+  controllers:
+    # order_details_controller
+    create_cart: "カートに商品を登録しました。"   # en =>Order detail was successfully created.
+    # products_controller
+    create_product: "商品を登録しました。"  # en =>Product was successfully created.
+    update_product: "商品を変更しました。"  # en =>Product was successfully updated.
+    # carts_controller
+    show_cart_error_log:  "無効なURLにアクセスしようとしました。"
+    show_cart_error_view: "無効なカートです。"
+    destory_cart:         "カートを空にしました。"
+
   products:
     # Common
     column:
@@ -39,10 +51,17 @@ ja:
       title:    "商品編集" 
 
   store:
+    # Views
     index:
       title:    "カタログ"
       cart_in:  "カートに入れる"
 
   carts:
+    action:
+      empty:    "カートを空にする"
+    dialog:
+      confirm:  "カートを空にしてもよろしいですか？"
+    # Views
     show:
       title:    "カート詳細"
+

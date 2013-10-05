@@ -26,12 +26,12 @@ class OrderDetailsController < ApplicationController
   # POST /order_details.json
   def create
     @cart = current_cart
-    product = Product.find(product_id_params)
-    @order_detail = @cart.order_details.build(product: product)
+    product = Product.find(order_detail_params[:product_id])
+    @order_detail = @cart.add_product(product.id)
 
     respond_to do |format|
       if @order_detail.save
-        format.html { redirect_to @order_detail.cart, notice: 'Order detail was successfully created.' }
+        format.html { redirect_to @order_detail.cart, notice: t('controllers.create_cart') }
         format.json { render action: 'show', status: :created, location: @order_detail }
       else
         format.html { render action: 'new' }
@@ -76,6 +76,6 @@ class OrderDetailsController < ApplicationController
     end
 
     def product_id_params
-      params.require(:product_id)
+      params.permit(:product_id)
     end
 end
