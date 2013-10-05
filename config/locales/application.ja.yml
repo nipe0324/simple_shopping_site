@@ -56,12 +56,18 @@ ja:
       title:    "カタログ"
       cart_in:  "カートに入れる"
 
+  order_details:
+    # Views
+    create:
+      add_product: "カートに商品を追加しました。"
+
   carts:
     action:
       empty:    "カートを空にする"
     dialog:
       confirm:  "カートを空にしてもよろしいですか？"
     # Views
-    show:
+    cart:   # '_cart'
       title:    "カート詳細"
+      sum:      "合計"
 

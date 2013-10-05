@@ -22,7 +22,18 @@ class OrderDetailsControllerTest < ActionController::TestCase
       post :create, order_detail: { product_id: @product.id }
     end
 
-    assert_redirected_to cart_path(assigns(:order_detail))
+    assert_redirected_to store_url
+  end
+
+  test "should create order_detail via ajax" do
+    assert_difference('OrderDetail.count') do
+      xhr :post, :create, order_detail: { product_id: @product.id }
+    end
+
+    assert_response :success
+    assert_select_jquery :html, '#cart' do
+      assert_select '.total_line', 1
+    end
   end
 
   test "should show order_detail" do

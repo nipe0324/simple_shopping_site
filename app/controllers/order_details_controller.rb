@@ -31,7 +31,8 @@ class OrderDetailsController < ApplicationController
 
     respond_to do |format|
       if @order_detail.save
-        format.html { redirect_to @order_detail.cart, notice: t('controllers.create_cart') }
+        format.html { redirect_to store_url, notice: t('controllers.create_cart') }
+        format.js   # views/order_details/create.js.erb
         format.json { render action: 'show', status: :created, location: @order_detail }
       else
         format.html { render action: 'new' }

@@ -10,7 +10,7 @@
 		<div class="price_line">
 			<span class="price"><%= product.price %></span>
 			<%= link_to t('.cart_in'), order_details_path( order_detail: { product_id: product } ),
-			  method: :post, :class => 'btn btn-primary' %>
+			  method: :post, :class => 'btn btn-primary', remote: true %>
 		</div>
 	</div>
 <% end %>
