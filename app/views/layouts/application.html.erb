@@ -25,11 +25,11 @@
 				</ul>
 				<ul class="nav navbar-right">
 					<% if user_signed_in? %>
-						<li><%= link_to "#{current_user.name}様", edit_user_registration_path %></a></li>
+						<li><%= link_to truncate(current_user.name, length: 10), edit_user_registration_path %></a></li>
 						<li><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></a></li>
 					<% else %>
 						<li><%= link_to t('.regist'), new_user_registration_path %></a></li>
-						<li><%= link_to t('.login'), new_user_session_path %></a></li>
+						<li><%= link_to t('.sign_in'), new_user_session_path %></a></li>
 					<% end %>
 				</ul>
 			</div>

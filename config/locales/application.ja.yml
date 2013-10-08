@@ -8,7 +8,8 @@ ja:
       store:			"物品を探す"
       products:   "商品を管理する"
       contact:		"お問い合わせ"
-      login:      "ログイン"
+      sign_out:   "ログアウト"
+      sign_in:      "ログイン"
       regist:     "ユーザ登録する"
       address:    "〒XXX-XXXX 東京都港区XXXX 3-2-4"
 

@@ -2,6 +2,16 @@
 
 ja:
   devise:
+    # users table column
+    column:
+      name:       "名前"
+      email:      "メールアドレス"
+      password:   "パスワード"
+      password_confirmation:      "パスワード（確認用）"
+      password_current:           "パスワード（現在）"
+      password_new:               "新しいパスワード"
+      password_new_confirmation_html:   "新しいパスワード<br>（確認用）"
+      address:    "住所"
     confirmations:
       confirmed: 'アカウントを登録しました。'
 #      confirmed: 'Your account was successfully confirmed. You are now signed in.'
@@ -9,6 +19,10 @@ ja:
 #      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
       send_paranoid_instructions: 'もしあなたのEメールアドレスが見つかった場合、本人確認についてのメールが数分以内に送られます。'
 #      send_paranoid_instructions: 'If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
+      # Views
+      new:
+        title:  "確認メールの再送信"  # Resend confirmation instructions
+        resend: "再送信" # Resend confirmation instructions
     failure:
       already_authenticated: '既にログインしています。'
 #      already_authenticated: 'You are already signed in.'
@@ -54,6 +68,14 @@ ja:
 #      updated: 'Your password was changed successfully. You are now signed in.'
       updated_not_active: 'パスワードが正しく変更されました。'
 #      updated_not_active: 'Your password was changed successfully.'
+      # Views
+      new:
+        title: "パスワードを忘れた方へ" # Forgot your password?
+        send_email: "パスワードをリセットするメールを送る"  #Send me reset password instructions
+      edit:
+        title: "パスワード変更" # Change your password
+        change_password: "パスワード変更"  # Change my password
+
     registrations:
       destroyed: 'アカウントを削除しました。またのご利用をお待ちしております。'
 #      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
@@ -69,11 +91,30 @@ ja:
 #      updated: 'You updated your account successfully.'
       update_needs_confirmation: "アカウント情報を変更しましたが、Eメールアドレスの本人確認用Eメールをお送りしましたので、中のリンクをクリックして証明してください。"
 #      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
+      # Views
+      new:
+        title:    "ユーザ登録"  # Sign up
+        sign_up:  "登録"       # Sign up
+      edit:
+        title:    "ユーザ編集"  # Edit User
+        note_edit_password: "パスワードを変更しない場合は空白のままにしてください" # (leave blank if you don't want to change it)
+        note_edit_except_password: "ユーザ編集を行う場合は必ず入力してください" # (we need your current password to confirm your changes)
+        edit:     "編集"       # Update
+        edit_cancel:   "キャンセル"  # <nothing>
+        cancel_account_title: "アカウントを削除"  # Cancel my account
+        cancel_account_msg: "アカウントを削除できます"
+        cancel_account_btn: "削除"# Cancel my account
+        confirm:  "アカウントを削除してもよろしいですか？" # Are you sure?   
     sessions:
       signed_in: 'ログインしました。'
 #      signed_in: 'Signed in successfully.'
       signed_out: 'ログアウトしました。'
 #      signed_out: 'Signed out successfully.'
+      # Views
+      new:
+        title:        "ログイン"  # Sign in
+        rememver_me:  "ログイン状態を保持する"
+        sign_in:      "ログイン"  # Sing in
     unlocks:
       send_instructions: 'アカウントの凍結解除方法を数分以内にメールでご連絡します。'
 #      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
@@ -81,6 +122,18 @@ ja:
 #      send_paranoid_instructions: 'If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.'
       unlocked: 'アカウントを凍結解除しました。ログインしています。'
 #      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+      # Views
+      new:
+        title:  "ユーザ削除のキャンセルメールの再送信"  # Resend unlock instructions
+        resend: "再送信" # Resend unlock instructions
+    # shared link
+    shared:
+      links:
+        sign_in: 'ログイン' # Sign in
+        sign_up: 'ユーザ登録'   # Sign up
+        forget_password: 'パスワードを忘れた方はこちらへ'  # Forgot your password?
+        dont_receive_confirm: 'ユーザ登録の確認メールを受け取れなかった方はこちらへ' # Didn't receive confirmation instructions?
+        dont_receive_unlock: 'ユーザ削除のキャンセルメールを受け取れなかった方はこちらへ' # Didn't receive unlock instructions?
   errors:
     messages:
       already_confirmed: "は既に登録済みですのでログインしてください"

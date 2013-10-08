@@ -18,7 +18,7 @@
     <td class="list_actions">
       <%= link_to t('products.action.show'), product_path(product), :class => 'btn btn-mini' %>
       <%= link_to t('products.action.edit'), edit_product_path(product), :class => 'btn btn-mini' %>
-      <%= link_to t('products.action.destroy'),
+      <%= button_to t('products.action.destroy'),
                   product_path(product),
                   :method => :delete,
                   :data => { :confirm => t('products.dialog.confirm') },
@@ -28,4 +28,4 @@
   </tr>
 </table>
 
-<%= link_to t('products.action.new'), new_product_path, :class => 'btn btn-primary' %>
+<%= button_to t('products.action.new'), new_product_path, :class => 'btn btn-primary' %>
