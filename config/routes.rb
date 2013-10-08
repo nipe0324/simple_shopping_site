@@ -1,4 +1,5 @@
 CharityBazaar::Application.routes.draw do
+  devise_for :users
   resources :order_details
 
   resources :carts, only: [:show, :destroy] # = except: [:index, :new, :edit, :create, :update]

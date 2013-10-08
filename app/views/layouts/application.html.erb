@@ -13,13 +13,24 @@
 		</div>
 		<div class="navbar">
 			<div class="navbar-inner">
-				<ul class="nav">
+				<ul class="nav navbar-left">
 					<li><%= link_to t('.home'), root_path %></a></li>
+				<%- if false -%>
 					<li><a href="/about/"><%= t '.about' %></a></li>
-					<li><a href="/sell/"><%= t '.sell' %></a></li>
-					<li><%= link_to t('.store'), store_path %></a></li>
-					<li><a href="/products/"><%= t '.products' %></a></li>
+	  			<li><a href="/sell/"><%= t '.sell' %></a></li>
 					<li><a href="/contact/"><%= t '.contact' %></a></li>
+				<%- end -%>
+					<li><%= link_to t('.store'), store_path %></a></li>
+					<li><%= link_to t('.products'), products_path %></a></li>
+				</ul>
+				<ul class="nav navbar-right">
+					<% if user_signed_in? %>
+						<li><%= link_to truncate(current_user.name, length: 10), edit_user_registration_path %></a></li>
+						<li><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %></a></li>
+					<% else %>
+						<li><%= link_to t('.regist'), new_user_registration_path %></a></li>
+						<li><%= link_to t('.sign_in'), new_user_session_path %></a></li>
+					<% end %>
 				</ul>
 			</div>
 		</div>
