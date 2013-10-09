@@ -1,6 +1,5 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
   # GET /orders.json
@@ -11,6 +10,7 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @order = Order.find(params[:id])
   end
 
   # GET /orders/new
@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
-    @order = Order.new(user_id: current_user.id)
+    @order = Order.find(params[:id])
   end
 
   # POST /orders
@@ -41,6 +41,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+        OrderNotifier.received(@order).deliver
         format.html { redirect_to store_url, notice: t('controllers.create_success') }
         format.json { render json: @order, status: :created, location: @order }
       else
@@ -54,6 +55,7 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
+    @order = Order.find(params[:id])
     respond_to do |format|
       if @order.update(order_params)
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
@@ -68,6 +70,7 @@ class OrdersController < ApplicationController
   # DELETE /orders/1
   # DELETE /orders/1.json
   def destroy
+    @order = Order.find(params[:id])
     @order.destroy
     respond_to do |format|
       format.html { redirect_to orders_url }
@@ -75,12 +78,13 @@ class OrdersController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order
-      @order = Order.find(params[:id])
-    end
+  def shipped
+    @order = Order.find(params[:id])
+    OrderNotifier.shipped(@order).deliver
+    redirect_to orders_url, notice: 'sent shipped email successfully'
+  end
 
+  private
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params.require(:order).permit(:address, :pay_type)

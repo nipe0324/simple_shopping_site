@@ -1,0 +1,10 @@
+<%= @order.user.name %> 様
+
+Charity Bazaarでのご注文、誠にありがとうございます。
+
+ご注文されたのは以下の商品です。
+
+<%= render @order.order_details %>
+<%= "#{t('.sum')} : #{@order.total_price}円" %>
+
+あなたのご注文を発送する際には、別途電子メールでご連絡いたします。

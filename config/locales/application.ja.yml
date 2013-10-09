@@ -91,3 +91,13 @@ ja:
       title:    "商品を注文" # New order
       summary:  "お客様の注文情報を入力してください。" # nothing
 
+  order_notifier:
+    received:
+      subject:        "注文が完了しました"
+      sum:            "合計"
+    shipped:
+      subject:        "商品を発送しました"
+      content:        "Charity Bazaarでのご注文、誠にありがとうございます。"
+      sum:            "合計"
+
+

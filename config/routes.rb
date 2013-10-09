@@ -1,5 +1,9 @@
 CharityBazaar::Application.routes.draw do
-  resources :orders
+  resources :orders do
+    member do
+      put 'shipped'
+    end
+  end
 
   devise_for :users
   resources :order_details
@@ -9,10 +13,7 @@ CharityBazaar::Application.routes.draw do
   get "store/index", as: :store
   resources :products
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
+  # root 
   root 'home#index'
 
   # Example of regular route:

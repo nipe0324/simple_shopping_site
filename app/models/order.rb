@@ -13,4 +13,9 @@ class Order < ActiveRecord::Base
   		order_details << item
   	end
   end
+
+  # Orderのすべてのアイテムの合計金額を計算する
+  def total_price
+    order_details.to_a.sum { |order_detail| order_detail.total_price }
+  end
 end
