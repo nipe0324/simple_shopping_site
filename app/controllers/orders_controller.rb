@@ -27,7 +27,9 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
-    @order = Order.find(params[:id])
+    @order = Order.new(user_id: current_user.id)
+    # TODO 正しくない挙動の可能性がある
+    # @order = Order.find(params[:id])
   end
 
   # POST /orders
