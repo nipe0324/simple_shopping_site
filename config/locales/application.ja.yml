@@ -24,6 +24,9 @@ ja:
     show_cart_error_log:  "無効なURLにアクセスしようとしました。"
     show_cart_error_view: "無効なカートです。"
     destory_cart:         "カートを空にしました。"
+    # orders_controller
+    new_order_details_empty:  "カートは空です。"
+    create_success:           "ご注文ありがとうございます。" # Order was successfully created.
 
   products:
     # Common
@@ -66,6 +69,7 @@ ja:
 
   carts:
     action:
+      checkout: "注文する"
       empty:    "カートを空にする"
     dialog:
       confirm:  "カートを空にしてもよろしいですか？"
@@ -73,4 +77,27 @@ ja:
     cart:   # '_cart'
       title:    "カート詳細"
       sum:      "合計"
+  orders:
+    # Views
+    form:   # '_form'
+      name:             "名前"
+      email:            "メールアドレス"
+      address:          "住所"
+      pay_type:         "支払方法"
+      pay_type_method:  "お支払い方法を選択してください。"
+      submit:           "注文"
+      back:             "戻る"
+    new:
+      title:    "商品を注文" # New order
+      summary:  "お客様の注文情報を入力してください。" # nothing
+
+  order_notifier:
+    received:
+      subject:        "注文が完了しました"
+      sum:            "合計"
+    shipped:
+      subject:        "商品を発送しました"
+      content:        "Charity Bazaarでのご注文、誠にありがとうございます。"
+      sum:            "合計"
+
 

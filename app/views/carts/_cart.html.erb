@@ -22,6 +22,8 @@
 </table>
 
 <div class="form-actions">
-<%= link_to t('carts.action.empty'), cart, method: :delete,
+<%= button_to t('carts.action.checkout'), new_order_path, method: :get,
+	:class => 'btn btn-primary' %>
+<%= button_to t('carts.action.empty'), cart, method: :delete,
   data: { confirm: t('carts.dialog.confirm') }, :class => 'btn btn-danger' %>
 </div>
