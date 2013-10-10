@@ -10,14 +10,14 @@ class OrderNotifierTest < ActionMailer::TestCase
   test "received" do
     mail = OrderNotifier.received(@order)
     assert_equal [@order.user.email], mail.to
-    assert_equal ["charity_bazaar@example.com"], mail.from
+    assert_equal ["no-reply@example.com"], mail.from
     assert_match "MyName", mail.body.encoded
   end
 
   test "shipped" do
     mail = OrderNotifier.shipped(@order)
     assert_equal [@order.user.email], mail.to
-    assert_equal ["charity_bazaar@example.com"], mail.from
+    assert_equal ["no-reply@example.com"], mail.from
     assert_match "MyName", mail.body.encoded
   end
 

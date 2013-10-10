@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-CharityBazaar::Application.config.secret_key_base = '77e6837f199fb9dbcabf390624f5aed02b459ec2056bb55594d55e0a0e8c4bf56236a2eed57da93448ee9a055eca30b52d6e83529b42c6d56297e87174c190c8'
+SimpleShoppingSite::Application.config.secret_key_base = '77e6837f199fb9dbcabf390624f5aed02b459ec2056bb55594d55e0a0e8c4bf56236a2eed57da93448ee9a055eca30b52d6e83529b42c6d56297e87174c190c8'

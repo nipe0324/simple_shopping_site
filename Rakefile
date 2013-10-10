@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-CharityBazaar::Application.load_tasks
+SimpleShoppingSite::Application.load_tasks

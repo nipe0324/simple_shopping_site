@@ -1,5 +1,5 @@
 class OrderNotifier < ActionMailer::Base
-  default from: 'Charity_bazaar <charity_bazaar@example.com>'
+  default from: 'Simple_Shopping_Site <no-reply@example.com>'
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:

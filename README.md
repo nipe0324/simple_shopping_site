@@ -1,4 +1,4 @@
-charity_bazaar
+simple_shopping_site
 ==============
 
-This is Online Charity Bazaar web application which is built by Ruby on Rails.
+This is Simple Shopping Site web application which is built by Ruby on Rails.

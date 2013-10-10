@@ -1,4 +1,4 @@
-CharityBazaar::Application.routes.draw do
+SimpleShoppingSite::Application.routes.draw do
   resources :orders do
     member do
       put 'shipped'
