@@ -11,9 +11,7 @@
       <dl>
         <dt><%= product.name %></dt>
         <dd><%= truncate product.description, length: 15 %></dd>
-        <dd><%= product.note %></dd>
         <dd><%= product.price %></dd>
-        <td><%= product.status %></td>
       </dl>
     <td class="list_actions">
       <%= link_to t('products.action.show'), product_path(product), :class => 'btn btn-mini' %>
@@ -28,4 +26,4 @@
   </tr>
 </table>
 
-<%= button_to t('products.action.new'), new_product_path, :class => 'btn btn-primary' %>
+<%= link_to t('products.action.new'), new_product_path, :class => 'btn btn-primary' %>

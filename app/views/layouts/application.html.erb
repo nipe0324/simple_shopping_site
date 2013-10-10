@@ -13,15 +13,20 @@
 		</div>
 		<div class="navbar">
 			<div class="navbar-inner">
-				<ul class="nav navbar-left">
+				<ul class="nav navbar-nav navbar-left">
 					<li><%= link_to t('.home'), root_path %></a></li>
 				<%- if false -%>
 					<li><a href="/about/"><%= t '.about' %></a></li>
-	  			<li><a href="/sell/"><%= t '.sell' %></a></li>
 					<li><a href="/contact/"><%= t '.contact' %></a></li>
 				<%- end -%>
 					<li><%= link_to t('.store'), store_path %></a></li>
-					<li><%= link_to t('.products'), products_path %></a></li>
+		      <li class="dropdown">
+    		    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t('.manage') %><b class="caret"></b></a>
+        		<ul class="dropdown-menu">
+        			<li><%= link_to t('.products'), products_path %></li>
+          		<li><%= link_to t('.category'), categories_path %></li>
+        		</ul>
+      		</li>
 				</ul>
 				<ul class="nav navbar-right">
 					<% if user_signed_in? %>

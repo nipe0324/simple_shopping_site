@@ -4,9 +4,10 @@ ja:
       title:			"タイトル"  #"もったいないから環境問題へ|チャリティオンラインバザー"
       home:  			"ホーム"
       about:			"当サイトについて"
-      sell: 			"物品を売る"
       store:			"物品を探す"
+      manage:     "管理者用"
       products:   "商品を管理する"
+      category:   "カテゴリを管理する"
       contact:		"お問い合わせ"
       sign_out:   "ログアウト"
       sign_in:      "ログイン"
@@ -34,9 +35,7 @@ ja:
       name:  		"名前"
       description: "概要"
       image_url:	 "画像URL"
-      note: 		"備考"
       price: 		"値段(円)"
-      status: 	"状態"
     action:
       back:			"一覧"
       show:     "詳細"
@@ -55,6 +54,30 @@ ja:
       title: 		"商品詳細"
     edit:
       title:    "商品編集" 
+
+  categories:
+    # Common
+    column:
+      name:       "名前"
+      updated_at: "更新日"
+    action:
+      back:     "一覧"
+      show:     "詳細"
+      new:      "登録"
+      edit:     "編集"
+      cancel:   "キャンセル"
+      destroy:  "削除"
+    dialog:
+      confirm:  "削除してもよろしいですか？"
+    # Views
+    index:
+      title:    "カテゴリ一覧"
+    new:
+      title:    "カテゴリ登録"
+    show:
+      title:    "カテゴリ詳細"
+    edit:
+      title:    "カテゴリ編集" 
 
   store:
     # Views

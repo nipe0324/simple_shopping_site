@@ -1,4 +1,6 @@
 SimpleShoppingSite::Application.routes.draw do
+  resources :categories
+
   resources :orders do
     member do
       put 'shipped'

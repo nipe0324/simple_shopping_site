@@ -2,8 +2,7 @@ class Product < ActiveRecord::Base
   has_many :order_details
   before_destroy :ensure_not_referenced_by_any_line_item
 
-#	validates :status, inclusion: { in: %w(contributed sent registered sold finished returned declined descarded) }
-  validates :name, :description, :image_url, :price, :status, presence: true
+  validates :name, :description, :image_url, :price, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 1 }
 
   private

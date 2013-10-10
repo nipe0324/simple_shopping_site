@@ -6,7 +6,6 @@ class CreateProducts < ActiveRecord::Migration
       t.string :image_url
       t.text :note
       t.decimal :price
-#      t.column :status, "ENUM('contributed', 'sent', 'registered', 'sold', 'finished', 'returned', 'declined', 'descarded')"
       t.string :status
 
       t.timestamps

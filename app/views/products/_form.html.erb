@@ -23,18 +23,6 @@
       <%= f.number_field :price, :class => 'text_field' %>*
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :status, t('products.column.status'), :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :status, :class => 'text_field' %>*
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :note, t('products.column.note'), :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :note, rows: 2, :class => 'text_field' %>
-    </div>
-  </div>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
