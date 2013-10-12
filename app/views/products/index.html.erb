@@ -7,6 +7,9 @@
     <td>
       <%= image_tag product.image_url, class: 'list_image' %>
     </td>
+    <td>
+      <%= product.category.name %>
+    </td>
     <td class="list_description">
       <dl>
         <dt><%= product.name %></dt>

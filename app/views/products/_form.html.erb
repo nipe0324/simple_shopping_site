@@ -6,6 +6,16 @@
     </div>
   </div>
   <div class="control-group">
+    <%= f.label :category_id, t('products.column.category'), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :category_id, Category.all.collect { |c| [ c.name, c.id.to_i ] },
+        :selected => @product.category_id, prompt: t('categories.form.category_choice'),
+        :class => 'text_field' %>
+    </div>
+  </div>
+
+
+  <div class="control-group">
     <%= f.label :description, t('products.column.description'), :class => 'control-label' %>
     <div class="controls">
       <%= f.text_area :description, rows: 5, :class => 'text_field' %>*

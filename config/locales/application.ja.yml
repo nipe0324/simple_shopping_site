@@ -32,10 +32,11 @@ ja:
   products:
     # Common
     column:
-      name:  		"名前"
+      name:  		   "名前"
       description: "概要"
       image_url:	 "画像URL"
-      price: 		"値段(円)"
+      price: 		   "値段(円)"
+      category:    "カテゴリ"
     action:
       back:			"一覧"
       show:     "詳細"
@@ -70,6 +71,8 @@ ja:
     dialog:
       confirm:  "削除してもよろしいですか？"
     # Views
+    form:  # _form
+      category_choice: "カテゴリを選択してください"
     index:
       title:    "カテゴリ一覧"
     new:
