@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all.order('created_at desc')
+    @orders = Order.all.order('updated_at desc')
   end
 
   # GET /orders/1
@@ -80,10 +80,15 @@ class OrdersController < ApplicationController
     end
   end
 
+  # PUT /orders/1/shipped
   def shipped
     @order = Order.find(params[:id])
-    OrderNotifier.shipped(@order).deliver
-    redirect_to orders_url, notice: 'sent shipped email successfully'
+    if @order.update_attribute(:status, 'shipped')
+      OrderNotifier.shipped(@order).deliver
+      redirect_to orders_url, notice: t('controllers.shipped')
+    else
+      render action: 'index'
+    end
   end
 
   private

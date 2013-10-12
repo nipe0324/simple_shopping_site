@@ -29,6 +29,8 @@ ja:
     # orders_controller
     new_order_details_empty:  "カートは空です。"
     create_success:           "ご注文ありがとうございます。" # Order was successfully created.
+    shipped: "発送済みメールを送りました。" # sent shipped email successfully
+
 
   products:
     # Common
@@ -125,12 +127,14 @@ ja:
       email:      "メールアドレス"
       pay_type:   "支払方法"
       status:     "状況"
-      created_at: "注文時刻"
+      updated_at: "更新時刻"
       # actions
       show:       "詳細"
       edit:       "編集"
       destroy:    "削除"
-      confirm:    "削除してもよろしいですか？"
+      confirm_delete:     "削除してもよろしいですか？"
+      shipped_order:      "発送"
+      confirm_shipped:    "発送済みにしてもよろしいですか？"
       # value of status
       received:   "注文済み"
       canceled:   "キャンセル済み"
