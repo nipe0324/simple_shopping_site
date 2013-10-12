@@ -46,6 +46,9 @@ ja:
       confirmation_instructions:
         subject: 'アカウントの登録方法'
 #        subject: 'Confirmation instructions'
+        welcom:   'ようこそ' # welcome
+        content:  '下記のリンクをクリックしてアカウントを有効にしてください。' # You can confirm your account email through the link below:
+        link:     'アカウントの有効化' # Confirm my account       
       reset_password_instructions:
         subject: 'パスワードの再設定'
 #        subject: 'Reset password instructions'
