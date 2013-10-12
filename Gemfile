@@ -49,3 +49,6 @@ end
 
 # Use Device for Authntication
 gem 'devise'
+
+# Mesure Coverage
+gem 'simplecov', require: false, group: :test

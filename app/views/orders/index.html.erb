@@ -1,32 +1,36 @@
-<h1>Listing orders</h1>
-
-<table>
+<div class="page-header">
+  <h1><%=t '.title' %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Address</th>
-      <th>Pay type</th>
-      <th></th>
-      <th></th>
+      <th><%= t('.id') %></th>
+      <th><%= t('.user_id') %></th>
+      <th><%= t('.email') %></th>
+      <th><%= t('.pay_type') %></th>
+      <th><%= t('.status') %></th>
+      <th><%= t('.updated_at') %></th>
       <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.user_id %></td>
-        <td><%= order.address %></td>
+        <td><%= link_to order.id, order_path(order) %></td>
+        <td><%= order.user.name %></td>
+        <td><%= order.user.email %></td>
         <td><%= order.pay_type %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Shipped', shipped_order_path(order), method: :put, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= t ".#{order.status}" %></td>
+        <td><%=l order.updated_at %></td>
+        <td>
+          <%= link_to t('.show'), order_path(order), :class => 'btn btn-mini' %>
+          <%= link_to t('.edit'), edit_order_path(order), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy'), order_path(order), :method => :delete,
+            :data => { :confirm => t('.confirm_delete') }, :class => 'btn btn-mini btn-danger' %>
+          <%= link_to t('.shipped_order'), shipped_order_path(order), :method => :put,
+            :data => { :confirm => t('.confirm_shipped') }, :class => 'btn btn-mini btn-primary' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Order', new_order_path %>

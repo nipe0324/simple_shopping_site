@@ -57,4 +57,14 @@ class OrdersControllerTest < ActionController::TestCase
 
     assert_redirected_to orders_path
   end
+
+  test "should shipped order" do
+    put :shipped, id: @order
+    assert_equal 'shipped', Order.find(@order.id).status
+
+    mail = ActionMailer::Base.deliveries.last
+    assert_equal 'Simple_Shopping_Site <no-reply@example.com>', mail[:from].value
+    assert_equal [@user.email], mail.to
+    assert_equal I18n.t('order_notifier.shipped.subject'), mail.subject
+  end
 end
