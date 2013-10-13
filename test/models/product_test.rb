@@ -33,4 +33,12 @@ class ProductTest < ActiveSupport::TestCase
   	product.price = 1
   	assert product.valid?
   end
+
+  test "ensure_not_referenced_by_any_line_item" do
+    product = Product.create(name: 'product', description: 'desc', image_url: 'zzz.jpg', price: 10, category_id: 1)
+    assert product.send(:ensure_not_referenced_by_any_line_item)
+
+    order_detail = OrderDetail.create(product_id: product.id)
+    refute false, product.send(:ensure_not_referenced_by_any_line_item)
+  end
 end

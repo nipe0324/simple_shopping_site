@@ -6,6 +6,6 @@ one:
   quantity: 1
 
 two:
-  product: two
-  cart: one
+  product: one
+  cart: two
   quantity: 1

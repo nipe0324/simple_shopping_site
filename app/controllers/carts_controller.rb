@@ -32,10 +32,4 @@ class CartsController < ApplicationController
       format.json { head :ok }
     end
   end
-
-  private
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def cart_params
-      params[:cart]
-    end
 end

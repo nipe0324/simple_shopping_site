@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
   setup do
-    @product = products(:three)
+    @product = products(:two)
     @category = categories(:one)
     sign_in users(:admin)
   end
