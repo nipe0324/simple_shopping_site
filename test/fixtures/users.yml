@@ -4,14 +4,16 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one:
-  name: MyName
-  email: test@test.com
+user:
+  name: user
+  role: user
+  email: user@test.com
   address: MyAddress
   confirmed_at: <%= 1.hour.ago.to_s(:db) %>
 
-two:
-  name: MyName
-  email: test2@test.com
+admin:
+  name: admin
+  role: admin
+  email: admin@test.com
   address: MyAddress
   confirmed_at: <%= 1.hour.ago.to_s(:db) %>

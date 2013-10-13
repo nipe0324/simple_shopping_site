@@ -38,6 +38,6 @@ Product.create(
 User.delete_all
 
 User.create(role: 'admin', name: 'admin', email: 'admin@example.com', password: 'admin12345', password_confirmation: 'admin12345', address: 'admin', confirmed_at: Time.now, confirmation_sent_at: Time.now)
-User.create(role: 'user', name: 'user', email: 'user@example.com', password: 'user12345', password_confirmation: 'user12345', address: 'admin', confirmed_at: Time.now, confirmation_sent_at: Time.now)
+User.create(role: 'user', name: 'user', email: 'user@example.com', password: 'user12345', password_confirmation: 'user12345', address: 'user', confirmed_at: Time.now, confirmation_sent_at: Time.now)
 
 # TODO ユーザとかすべてのデータを初期化したい

@@ -2,8 +2,9 @@ require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
   setup do
-    @product = products(:one)
+    @product = products(:three)
     @category = categories(:one)
+    sign_in users(:admin)
   end
 
   test "should get index" do

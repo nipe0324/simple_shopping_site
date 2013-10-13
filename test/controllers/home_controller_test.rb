@@ -13,7 +13,7 @@ class HomeControllerTest < ActionController::TestCase
   end
 
   test "should get user_edit page when authenticated as a user" do
-  	sign_in users(:one)
+  	sign_in users(:user)
   	get :index
   	assert_response :success
   	# TODO ユーザ名の編集画面に遷移するassertを追加

@@ -3,23 +3,26 @@ require 'test_helper'
 class OrdersControllerTest < ActionController::TestCase
   setup do
     @order = orders(:one)
-    @user = users(:one)
-    sign_in @user
+    @user = users(:user)
+    @admin = users(:admin)
   end
 
   test "should get index" do
+    sign_in @admin
     get :index
     assert_response :success
     assert_not_nil assigns(:orders)
   end
 
   test "requires item in cart" do
+    sign_in @user
     get :new
     assert_redirected_to store_url
     assert_equal "カートは空です。", flash[:notice]
   end
 
   test "should get new" do
+    sign_in @user
     cart = Cart.create
     OrderDetail.create(cart: cart, product: products(:one))
 
@@ -28,6 +31,7 @@ class OrdersControllerTest < ActionController::TestCase
   end
 
   test "should create order" do
+    sign_in @user
     assert_difference('Order.count') do
       post :create, order: { address: @order.address, pay_type: @order.pay_type, user_id: @order.user_id }
     end
@@ -36,21 +40,25 @@ class OrdersControllerTest < ActionController::TestCase
   end
 
   test "should show order" do
+    sign_in @admin
     get :show, id: @order
     assert_response :success
   end
 
   test "should get edit" do
+    sign_in @admin
     get :edit, id: @order
     assert_response :success
   end
 
   test "should update order" do
+    sign_in @admin
     patch :update, id: @order, order: { address: @order.address, pay_type: @order.pay_type, user_id: @order.user_id }
     assert_redirected_to order_path(assigns(:order))
   end
 
   test "should destroy order" do
+    sign_in @admin
     assert_difference('Order.count', -1) do
       delete :destroy, id: @order
     end
@@ -59,6 +67,7 @@ class OrdersControllerTest < ActionController::TestCase
   end
 
   test "should shipped order" do
+    sign_in @admin
     put :shipped, id: @order
     assert_equal 'shipped', Order.find(@order.id).status
 
