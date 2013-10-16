@@ -1,0 +1,23 @@
+<div class="page-header">
+  <h1><%=t '.title' %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= t('.id') %>:</strong></dt>
+  <dd><%= @order.id %></dd>
+  <dt><strong><%= t('.user_name') %>:</strong></dt>
+  <dd><%= @order.user.name %></dd>
+  <dt><strong><%= t('.address') %>:</strong></dt>
+  <dd><%= @order.address %></dd>
+  <dt><strong><%= t('.pay_type') %>:</strong></dt>
+  <dd><%= @order.pay_type %></dd>
+  <dt><strong><%= t('.status') %>:</strong></dt>
+  <dd><%= t(".#{@order.status}") %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back'), orders_path, :class => 'btn'  %>
+  <%= link_to t('.edit'), edit_order_path(@order), :class => 'btn' %>
+  <%= link_to t('.destroy'), order_path(@order), :method => 'delete',
+              :data => { :confirm => t('.confirm') }, :class => 'btn btn-danger' %>
+</div>

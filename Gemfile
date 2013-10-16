@@ -1,10 +1,15 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
+
+# For Heroku. Thank you Heroku!
+# Specify Ruby version in app for Heroku
+ruby '2.0.0'
+gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use Postgresql as the database for Active Record
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -16,7 +21,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
+
+# Use bootstrap
+gem 'twitter-bootstrap-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -43,3 +51,9 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Use Device for Authntication
+gem 'devise'
+
+# Mesure Coverage
+gem 'simplecov', require: false, group: :test

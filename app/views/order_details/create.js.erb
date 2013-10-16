@@ -1,0 +1,4 @@
+$('#cart').html("<%= j render @cart %>");
+var alert = '<div class="alert alert-success"><%= j t('.add_product') %></div>'
+$('#contents').prepend(alert);
+$('.alert-success').fadeOut(2000);

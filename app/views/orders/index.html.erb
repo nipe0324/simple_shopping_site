@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1><%=t '.title' %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t('.id') %></th>
+      <th><%= t('.user_name') %></th>
+      <th><%= t('.email') %></th>
+      <th><%= t('.pay_type') %></th>
+      <th><%= t('.status') %></th>
+      <th><%= t('.updated_at') %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= link_to order.id, order_path(order) %></td>
+        <td><%= order.user.name %></td>
+        <td><%= order.user.email %></td>
+        <td><%= order.pay_type %></td>
+        <td><%= t ".#{order.status}" %></td>
+        <td><%=l order.updated_at %></td>
+        <td>
+          <%= link_to t('.show'), order_path(order), :class => 'btn btn-mini' %>
+          <%= link_to t('.edit'), edit_order_path(order), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy'), order_path(order), :method => :delete,
+            :data => { :confirm => t('.confirm_delete') }, :class => 'btn btn-mini btn-danger' %>
+          <%= link_to t('.shipped_order'), shipped_order_path(order), :method => :put,
+            :data => { :confirm => t('.confirm_shipped') }, :class => 'btn btn-mini btn-primary' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
