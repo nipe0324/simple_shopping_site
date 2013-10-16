@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user:	user
+  address: MyText
+  pay_type: 現金
+
+two:
+  user:	user
+  address: MyText
+  pay_type: MyString

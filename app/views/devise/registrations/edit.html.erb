@@ -1,0 +1,75 @@
+<div class="page-header">
+  <h1><%=t '.title' %></h1>
+</div>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-horizontal' }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="control-group">
+    <%= f.label :name, t('devise.column.name'), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field', :autofocus => true %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :email, t('devise.column.email'), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.email_field :email %>
+    </div>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+ <div class="control-group">
+    <%= f.label :password, t('devise.column.password'), :class => 'control-label' %>
+    <i><%= t('.note_edit_password') %></i>
+    <div class="controls">
+      <%= f.password_field :password, :autocomplete => "off" %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :password_confirmation, t('devise.column.password_confirmation'), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.password_field :password_confirmation %>
+    </div>
+  </div>
+
+
+  <div class="control-group">
+    <%= f.label :current_password, t('devise.column.password_current'), :class => 'control-label' %>
+    <i><%= t('.note_edit_except_password') %></i>
+    <div class="controls">
+      <%= f.password_field :current_password %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :address, t('devise.column.address'), :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :address, cols: 20, rows: 4 %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit t('.edit'), :class => 'btn btn-primary' %>
+    <%= link_to t('.edit_cancel'), root_path, :class => 'btn' %>
+  </div>
+<% end %>
+
+
+<div class="page-header">
+  <h1><%=t '.cancel_account_title' %></h1>
+</div>
+
+  <div class="control-group">
+    <div class="control-label"><%= t('.cancel_account_msg') %></div>
+  </div>
+
+
+<div class="form-actions">
+  <%= button_to t('.cancel_account_btn'), registration_path(resource_name), :data => { :confirm => t('.confirm') }, :method => :delete, :class => 'btn btn-danger' %>
+</div>

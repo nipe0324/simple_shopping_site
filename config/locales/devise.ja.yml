@@ -1,0 +1,156 @@
+#SOURCE https://gist.github.com/kawamoto/4729292
+
+ja:
+  devise:
+    # users table column
+    column:
+      name:       "名前"
+      email:      "メールアドレス"
+      password:   "パスワード"
+      password_confirmation:      "パスワード（確認用）"
+      password_current:           "パスワード（現在）"
+      password_new:               "新しいパスワード"
+      password_new_confirmation_html:   "新しいパスワード<br>（確認用）"
+      address:    "住所"
+    confirmations:
+      confirmed: 'アカウントを登録しました。'
+#      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+      send_instructions: '登録方法を数分以内にメールでご連絡します。'
+#      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      send_paranoid_instructions: 'もしあなたのEメールアドレスが見つかった場合、本人確認についてのメールが数分以内に送られます。'
+#      send_paranoid_instructions: 'If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
+      # Views
+      new:
+        title:  "確認メールの再送信"  # Resend confirmation instructions
+        resend: "再送信" # Resend confirmation instructions
+    failure:
+      already_authenticated: '既にログインしています。'
+#      already_authenticated: 'You are already signed in.'
+      inactive: 'アカウントがアクティベートされていません。'
+#      inactive: 'Your account was not activated yet.'
+      invalid: 'メールアドレスかパスワードが違います。'
+#      invalid: 'Invalid email or password.'
+      invalid_token: '認証キーが不正です。'
+#      invalid_token: 'Invalid authentication token.'
+      locked: 'あなたのアカウントは凍結されています。'
+#      locked: 'Your account is locked.'
+      not_found_in_database: 'メールアドレスかパスワードが違います。'
+#      not_found_in_database: "Invalid email or password."
+      timeout: 'セッションがタイムアウトしました。もう一度ログインしてください。'
+#      timeout: 'Your session expired, please sign in again to continue.'
+      unauthenticated: 'ログインしてください。'
+#      unauthenticated: 'You need to sign in or sign up before continuing.'
+      unconfirmed: '本登録を行ってください。'
+#      unconfirmed: 'You have to confirm your account before continuing.'
+    mailer:
+      confirmation_instructions:
+        subject: 'アカウントの登録方法'
+#        subject: 'Confirmation instructions'
+        welcome:   'ようこそ' # welcome
+        content:  '下記のリンクをクリックしてアカウントを有効にしてください。' # You can confirm your account email through the link below:
+        link:     'アカウントの有効化' # Confirm my account       
+      reset_password_instructions:
+        subject: 'パスワードの再設定'
+#        subject: 'Reset password instructions'
+      unlock_instructions:
+        subject: 'アカウントの凍結解除'
+#        subject: 'Unlock Instructions'
+    omniauth_callbacks:
+      success: '%{kind} アカウントによる個人認証に成功しました。'
+#      success: 'Successfully authenticated from %{kind} account.'
+      failure: '%{kind} アカウントによる個人認証に失敗しました（%{reason}）。'
+#      failure: 'Could not authenticate you from %{kind} because "%{reason}".'
+    passwords:
+      no_token: "このページにはアクセスできません。パスワード復元メールのリンクをコピーした場合には、正しい URL かどうかをお確かめください。"
+#      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+      send_instructions: 'パスワードのリセット方法を数分以内にメールでご連絡します。'
+#      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      send_paranoid_instructions: "もしあなたのEメールアドレスが見つかった場合、パスワード復元用のメールが数分以内に送られます。"
+#      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
+      updated: 'パスワードを変更しました。'
+#      updated: 'Your password was changed successfully. You are now signed in.'
+      updated_not_active: 'パスワードが正しく変更されました。'
+#      updated_not_active: 'Your password was changed successfully.'
+      # Views
+      new:
+        title: "パスワードを忘れた方へ" # Forgot your password?
+        send_email: "パスワードをリセットするメールを送る"  #Send me reset password instructions
+      edit:
+        title: "パスワード変更" # Change your password
+        change_password: "パスワード変更"  # Change my password
+
+    registrations:
+      destroyed: 'アカウントを削除しました。またのご利用をお待ちしております。'
+#      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+      signed_up: 'ようこそ！ アカウント登録を受け付けました。'
+#      signed_up: 'Welcome! You have signed up successfully.'
+      signed_up_but_inactive: 'アカウント登録を受け付けました。しかしまだ有効化されておらず、ログインできません。'
+#      signed_up_but_inactive: 'You have signed up successfully. However, we could not sign you in because your account is not yet activated.'
+      signed_up_but_locked: 'アカウント登録を受け付けました。しかし、アカウントが凍結されているためログインできません。'
+#      signed_up_but_locked: 'You have signed up successfully. However, we could not sign you in because your account is locked.'
+      signed_up_but_unconfirmed: '本人確認用のメールがあなたのEメールアドレスに送られました。メール内のリンクからアカウントを有効化させてください。'
+#      signed_up_but_unconfirmed: 'A message with a confirmation link has been sent to your email address. Please open the link to activate your account.'
+      updated: 'アカウント情報を変更しました。'
+#      updated: 'You updated your account successfully.'
+      update_needs_confirmation: "アカウント情報を変更しましたが、Eメールアドレスの本人確認用Eメールをお送りしましたので、中のリンクをクリックして証明してください。"
+#      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
+      # Views
+      new:
+        title:    "ユーザ登録"  # Sign up
+        sign_up:  "登録"       # Sign up
+      edit:
+        title:    "ユーザ編集"  # Edit User
+        note_edit_password: "パスワードを変更しない場合は空白のままにしてください" # (leave blank if you don't want to change it)
+        note_edit_except_password: "ユーザ編集を行う場合は必ず入力してください" # (we need your current password to confirm your changes)
+        edit:     "編集"       # Update
+        edit_cancel:   "キャンセル"  # <nothing>
+        cancel_account_title: "アカウントを削除"  # Cancel my account
+        cancel_account_msg: "アカウントを削除できます"
+        cancel_account_btn: "削除"# Cancel my account
+        confirm:  "アカウントを削除してもよろしいですか？" # Are you sure?   
+    sessions:
+      signed_in: 'ログインしました。'
+#      signed_in: 'Signed in successfully.'
+      signed_out: 'ログアウトしました。'
+#      signed_out: 'Signed out successfully.'
+      # Views
+      new:
+        title:        "ログイン"  # Sign in
+        rememver_me:  "ログイン状態を保持する"
+        sign_in:      "ログイン"  # Sing in
+    unlocks:
+      send_instructions: 'アカウントの凍結解除方法を数分以内にメールでご連絡します。'
+#      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      send_paranoid_instructions: 'アカウントが見つかった場合、アカウントの凍結解除方法を数分以内にメールでご連絡します。'
+#      send_paranoid_instructions: 'If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.'
+      unlocked: 'アカウントを凍結解除しました。ログインしています。'
+#      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+      # Views
+      new:
+        title:  "ユーザ削除のキャンセルメールの再送信"  # Resend unlock instructions
+        resend: "再送信" # Resend unlock instructions
+    # shared link
+    shared:
+      links:
+        sign_in: 'ログイン' # Sign in
+        sign_up: 'ユーザ登録'   # Sign up
+        forget_password: 'パスワードを忘れた方はこちらへ'  # Forgot your password?
+        dont_receive_confirm: 'ユーザ登録の確認メールを受け取れなかった方はこちらへ' # Didn't receive confirmation instructions?
+        dont_receive_unlock: 'ユーザ削除のキャンセルメールを受け取れなかった方はこちらへ' # Didn't receive unlock instructions?
+  errors:
+    messages:
+      already_confirmed: "は既に登録済みですのでログインしてください"
+#      already_confirmed: "was already confirmed, please try signing in"
+      confirmation_period_expired: "の確認期限が切れました。%{period}以内に確認する必要があります。 新しくリクエストしてください"
+#      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+      expired: "の期限が切れましたので、新しくリクエストしてください"
+#      expired: "has expired, please request a new one"
+      not_found: "は見つかりませんでした"
+#      not_found: "not found"
+      not_locked: "は凍結されていません"
+#      not_locked: "was not locked"
+      not_saved:
+        one: "1 つのエラーにより %{resource} は保存されませんでした:"
+#        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} つのエラーにより %{resource} は保存されませんでした:"
+#        other: "%{count} errors prohibited this %{resource} from being saved:"

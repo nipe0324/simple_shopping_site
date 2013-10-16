@@ -1,0 +1,194 @@
+ja:
+  layouts:
+    application:
+      title:			"ショッピングサイト"
+      store:			"商品を探す"
+      manage:     "管理者用"
+      products:   "商品を管理する"
+      categories: "カテゴリを管理する"
+      orders:     "注文を管理する"
+      contact:		"お問い合わせ"
+      sign_out:   "ログアウト"
+      sign_in:      "ログイン"
+      regist:     "ユーザ登録する"
+      copyright_html:   "Copyright &copy; Simple Shopping Site(S3) All Rights Reserved."
+      address:          "〒XXX-XXXX 東京都港区XXXX 3-2-4"
+
+  # Controllers
+  controllers:
+    # order_details_controller
+    create_cart: "カートに商品を登録しました。"   # en =>Order detail was successfully created.
+    # categories_controller
+    destory_category_success: "カテゴリを削除しました。"
+    destory_category_failure: "カテゴリの削除に失敗しました。"
+    # products_controller
+    create_product: "商品を登録しました。"  # en =>Product was successfully created.
+    update_product: "商品を変更しました。"  # en =>Product was successfully updated.
+    destory_product_success: "商品を削除しました。"
+    destory_product_failure: "商品の削除に失敗しました。"
+    # carts_controller
+    show_cart_error_log:  "無効なURLにアクセスしようとしました。"
+    show_cart_error_view: "無効なカートです。"
+    destory_cart:         "カートを空にしました。"
+    # orders_controller
+    new_order_details_empty:  "カートは空です。"
+    create_success:           "ご注文ありがとうございます。" # Order was successfully created.
+    update_success:           "ご注文を更新しました。" # Order was successfully updated.
+    shipped:  "発送済みメールを送信しました。" # sent shipped email successfully
+    not_ship: "発送済みメールの送信に失敗しました。"
+
+  home:
+    index: 
+      hello:    "このサイトはショッピングサイトのデモサイトです。"
+      lead_html:     "このサイトは一般的なシンプルなショッピングサイトです。<br>
+                      利用者はuserでログインし、「商品を探す」から商品を検索し、注文ができます。<br>
+                      管理者はadminでログインし、「管理者用」から商品、カテゴリ、注文の管理ができます。"
+      contact_me_html:   "お問い合わせ  &raquo;"
+      topic_product:  "注目商品"
+      topic_content:  "テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト"
+      topic_link_html:     "詳細 &raquo;"
+    contact:
+      title:    "お問い合わせ"
+      content_html:  "もしご質問やご意見がある場合は、<i>nipe0324@gmail.com</i>に気楽にご連絡ください。"
+
+  products:
+    # Common
+    column:
+      name:  		   "名前"
+      description: "概要"
+      image_url:	 "画像URL"
+      price: 		   "値段(円)"
+      category:    "カテゴリ"
+    action:
+      back:			"一覧"
+      show:     "詳細"
+      new:			"登録"
+      edit:			"編集"
+      cancel:   "キャンセル"
+      destroy:	"削除"
+    dialog:
+      confirm:  "削除してもよろしいですか？"
+    # Views
+    index:
+      title: 		"商品一覧"
+    new:
+      title:    "商品登録"
+    show:
+      title: 		"商品詳細"
+    edit:
+      title:    "商品編集" 
+
+  categories:
+    # Common
+    column:
+      name:       "名前"
+      updated_at: "更新日"
+    action:
+      back:     "戻る"
+      show:     "詳細"
+      new:      "登録"
+      edit:     "編集"
+      cancel:   "キャンセル"
+      destroy:  "削除"
+    dialog:
+      confirm:  "削除してもよろしいですか？"
+    # Views
+    form:  # _form
+      category_choice: "カテゴリを選択してください"
+    index:
+      title:    "カテゴリ一覧"
+    new:
+      title:    "カテゴリ登録"
+    show:
+      title:    "カテゴリ詳細"
+    edit:
+      title:    "カテゴリ編集" 
+
+  store:
+    # Views
+    index:
+      title:    "カタログ"
+      cart_in:  "カートに入れる"
+
+  order_details:
+    # Views
+    create:
+      add_product: "カートに商品を追加しました。"
+
+  carts:
+    action:
+      checkout: "注文する"
+      empty:    "カートを空にする"
+    dialog:
+      confirm:  "カートを空にしてもよろしいですか？"
+    # Views
+    cart:   # '_cart'
+      name:     "名前"
+      quantity: "数量"
+      price:    "値段"
+      title:    "カート詳細"
+      sum:      "合計"
+  orders:
+    # Views
+    form:   # '_form'
+      name:             "名前"
+      email:            "メールアドレス"
+      address:          "住所"
+      pay_type:         "支払方法"
+      pay_type_method:  "お支払い方法を選択してください。"
+#      submit:           "注文"
+      back:             "戻る"
+    new:
+      title:    "商品を注文" # New order
+      summary:  "お客様の注文情報を入力してください。" # nothing
+    edit:
+      title:    "商品を編集" # Edit order
+    index:
+      title:      "注文一覧"
+      # columns
+      id:         "ID"
+      user_name:    "ユーザ名"
+      email:      "メールアドレス"
+      pay_type:   "支払方法"
+      status:     "状況"
+      updated_at: "更新時刻"
+      # actions
+      show:       "詳細"
+      edit:       "編集"
+      destroy:    "削除"
+      confirm_delete:     "削除してもよろしいですか？"
+      shipped_order:      "発送"
+      confirm_shipped:    "発送済みにしてもよろしいですか？"
+      # value of status
+      received:   "注文済み"
+      canceled:   "キャンセル済み"
+      shipped:    "発送済み"
+      returned:   "返品済み"
+    show:
+      title:      "注文詳細"
+      id:         "ID"
+      user_name:  "ユーザ名"
+      address:    "住所"
+      pay_type:   "支払方法"
+      status:     "状況"
+      # actions
+      back:       "戻る"
+      edit:       "編集"
+      destroy:    "削除"
+      confirm:    "削除してもよろしいですか？"
+      # value of status
+      received:   "注文済み"
+      canceled:   "キャンセル済み"
+      shipped:    "発送済み"
+      returned:   "返品済み"
+
+
+  order_notifier:
+    received:
+      subject:        "注文が完了しました"
+      sum:            "合計"
+    shipped:
+      subject:        "商品を発送しました"
+      sum:            "合計"
+
+

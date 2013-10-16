@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1><%=t '.title' %></h1>
+</div>
+<table class="table table-striped">
+<% @products.each do |product| %>
+  <tr>
+    <td>
+      <%= image_tag product.image_url, class: 'list_image' %>
+    </td>
+    <td>
+      <%= product.category.name %>
+    </td>
+    <td class="list_description">
+      <dl>
+        <dt><%= product.name %></dt>
+        <dd><%= truncate product.description, length: 15 %></dd>
+        <dd><%= product.price %></dd>
+      </dl>
+    <td class="list_actions">
+      <%= link_to t('products.action.show'), product_path(product), :class => 'btn btn-mini' %>
+      <%= link_to t('products.action.edit'), edit_product_path(product), :class => 'btn btn-mini' %>
+      <%= button_to t('products.action.destroy'),
+                  product_path(product),
+                  :method => :delete,
+                  :data => { :confirm => t('products.dialog.confirm') },
+                  :class => 'btn btn-danger btn-mini' %>
+    </td>
+  <% end %>
+  </tr>
+</table>
+
+<%= link_to t('products.action.new'), new_product_path, :class => 'btn btn-primary' %>
