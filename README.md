@@ -16,7 +16,7 @@ To create database schema of this application.
 rake db:migrate
 ```
 
-* Database initialization
+## Database initialization
 To make user and product sample data.
 ```console
 rake db:seed
