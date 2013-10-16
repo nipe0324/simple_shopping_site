@@ -1,10 +1,8 @@
 ja:
   layouts:
     application:
-      title:			"シンプルショッピングサイト（デモサイト）"
-      home:  			"ホーム"
-      about:			"当サイトについて"
-      store:			"物品を探す"
+      title:			"ショッピングサイト"
+      store:			"商品を探す"
       manage:     "管理者用"
       products:   "商品を管理する"
       categories: "カテゴリを管理する"
@@ -13,7 +11,8 @@ ja:
       sign_out:   "ログアウト"
       sign_in:      "ログイン"
       regist:     "ユーザ登録する"
-      address:    "〒XXX-XXXX 東京都港区XXXX 3-2-4"
+      copyright_html:   "Copyright &copy; Simple Shopping Site(S3) All Rights Reserved."
+      address:          "〒XXX-XXXX 東京都港区XXXX 3-2-4"
 
   # Controllers
   controllers:
@@ -37,6 +36,20 @@ ja:
     update_success:           "ご注文を更新しました。" # Order was successfully updated.
     shipped:  "発送済みメールを送信しました。" # sent shipped email successfully
     not_ship: "発送済みメールの送信に失敗しました。"
+
+  home:
+    index: 
+      hello:    "このサイトはショッピングサイトのデモサイトです。"
+      lead_html:     "このサイトは一般的なシンプルなショッピングサイトです。<br>
+                      利用者はuserでログインし、「商品を探す」から商品を検索し、注文ができます。<br>
+                      管理者はadminでログインし、「管理者用」から商品、カテゴリ、注文の管理ができます。"
+      contact_me_html:   "お問い合わせ  &raquo;"
+      topic_product:  "注目商品"
+      topic_content:  "テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト"
+      topic_link_html:     "詳細 &raquo;"
+    contact:
+      title:    "お問い合わせ"
+      content_html:  "もしご質問やご意見がある場合は、<i>nipe0324@gmail.com</i>に気楽にご連絡ください。"
 
   products:
     # Common
@@ -110,6 +123,9 @@ ja:
       confirm:  "カートを空にしてもよろしいですか？"
     # Views
     cart:   # '_cart'
+      name:     "名前"
+      quantity: "数量"
+      price:    "値段"
       title:    "カート詳細"
       sum:      "合計"
   orders:

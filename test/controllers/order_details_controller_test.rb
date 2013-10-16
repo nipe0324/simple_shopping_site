@@ -6,12 +6,6 @@ class OrderDetailsControllerTest < ActionController::TestCase
     @product = products(:one)
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:order_details)
-  end
-
   test "should create order_detail" do
     assert_difference('OrderDetail.count') do
       post :create, order_detail: { product_id: @product.id }

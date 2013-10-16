@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
-  before_action :authenticate_admin!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   # Prevent CSRF attacks by raising an exception.
@@ -32,3 +30,4 @@ class ApplicationController < ActionController::Base
     end
   end
 end
+

@@ -1,10 +1,10 @@
 SimpleShoppingSite::Application.routes.draw do
 
-  # root 
   root 'home#index'
+  get "contact" => 'home#contact'
 
   get "store/index", as: :store
-  resources :order_details, only: [:index, :create, :destroy]
+  resources :order_details, only: [:create, :destroy]
   resources :carts, only: [:show, :destroy]
 
   resources :products
