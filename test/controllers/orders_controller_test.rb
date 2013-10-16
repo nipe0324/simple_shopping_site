@@ -7,6 +7,7 @@ class OrdersControllerTest < ActionController::TestCase
     @admin = users(:admin)
   end
 
+
   test "should get index" do
     sign_in @admin
     get :index
@@ -30,13 +31,23 @@ class OrdersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create order" do
+  test "should create order success" do
     sign_in @user
     assert_difference('Order.count') do
       post :create, order: { address: @order.address, pay_type: @order.pay_type, user_id: @order.user_id }
     end
 
     assert_redirected_to store_path
+  end
+
+  test "should create order failure" do
+    sign_in @user
+    assert_no_difference('Order.count') do
+      post :create, order: { address: '', pay_type: '', user_id: @order.user_id }
+    end
+
+    assert_response :success
+    assert_template 'new'
   end
 
   test "should show order" do
@@ -51,10 +62,17 @@ class OrdersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update order" do
+  test "should update order success" do
     sign_in @admin
     patch :update, id: @order, order: { address: @order.address, pay_type: @order.pay_type, user_id: @order.user_id }
     assert_redirected_to order_path(assigns(:order))
+  end
+
+  test "should update order failure" do
+    sign_in @admin
+    patch :update, id: @order, order: { address: '', pay_type: '', user_id: @order.user_id }
+    assert_response :success
+    assert_template 'edit'
   end
 
   test "should destroy order" do
@@ -66,7 +84,7 @@ class OrdersControllerTest < ActionController::TestCase
     assert_redirected_to orders_path
   end
 
-  test "should shipped order" do
+  test "should ship order" do
     sign_in @admin
     put :shipped, id: @order
     assert_equal 'shipped', Order.find(@order.id).status

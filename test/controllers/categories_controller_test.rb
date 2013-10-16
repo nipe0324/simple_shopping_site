@@ -12,18 +12,33 @@ class CategoriesControllerTest < ActionController::TestCase
     assert_not_nil assigns(:categories)
   end
 
+  test "should not get index without singing in admin" do
+    sign_out users(:admin)
+    get :index
+    assert_redirected_to root_url
+  end
+
   test "should get new" do
     get :new
     assert_response :success
   end
 
-  test "should create category" do
+  test "should create category success" do
     assert_difference('Category.count') do
       post :create, category: { name: @category.name }
     end
 
     assert_redirected_to category_path(assigns(:category))
   end
+
+  test "should create category failure" do
+    assert_no_difference('Category.count') do
+      post :create, category: { name: '' }
+    end
+
+    assert_response :success
+    assert_template 'new'
+  end  
 
   test "should show category" do
     get :show, id: @category
@@ -35,9 +50,15 @@ class CategoriesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update category" do
+  test "should update category success" do
     patch :update, id: @category, category: { name: @category.name }
     assert_redirected_to category_path(assigns(:category))
+  end
+
+  test "should update category failure" do
+    patch :update, id: @category, category: { name: '' }
+    assert_response :success
+    assert_template 'edit'
   end
 
   test "should destroy category" do

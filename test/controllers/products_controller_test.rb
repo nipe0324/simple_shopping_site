@@ -18,7 +18,7 @@ class ProductsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create product" do
+  test "should create product success" do
     assert_difference('Product.count') do
       post :create, product: {
         description: @product.description, image_url: @product.image_url,
@@ -26,6 +26,17 @@ class ProductsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to product_path(assigns(:product))
+  end
+
+  test "should create product failure" do
+    assert_no_difference('Product.count') do
+      post :create, product: {
+        description: '', image_url: '',
+        name: '', price: @product.price, category_id: @category.id }
+    end
+
+    assert_response :success
+    assert_template 'new'
   end
 
   test "should show product" do
@@ -38,10 +49,18 @@ class ProductsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update product" do
+  test "should update product success" do
     patch :update, id: @product, product: { description: @product.description, image_url: @product.image_url, name: @product.name, price: @product.price }
     assert_redirected_to product_path(assigns(:product))
   end
+
+  test "should update product failure" do
+    patch :update, id: @product, product: { description: '', image_url: '', name: '', price: @product.price }
+
+    assert_response :success
+    assert_template 'edit'
+  end
+
 
   test "should destroy product" do
     assert_difference('Product.count', -1) do

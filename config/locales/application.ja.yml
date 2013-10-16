@@ -29,8 +29,8 @@ ja:
     # orders_controller
     new_order_details_empty:  "カートは空です。"
     create_success:           "ご注文ありがとうございます。" # Order was successfully created.
-    shipped: "発送済みメールを送りました。" # sent shipped email successfully
-
+    shipped:  "発送済みメールを送信しました。" # sent shipped email successfully
+    not_ship: "発送済みメールの送信に失敗しました。"
 
   products:
     # Common

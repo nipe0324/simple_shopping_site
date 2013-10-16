@@ -87,7 +87,7 @@ class OrdersController < ApplicationController
       OrderNotifier.shipped(@order).deliver
       redirect_to orders_url, notice: t('controllers.shipped')
     else
-      render action: 'index'
+      render action: 'index', notice: t('controllers.not_ship')
     end
   end
 
