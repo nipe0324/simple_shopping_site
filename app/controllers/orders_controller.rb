@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
-  skip_before_action :authenticate_admin!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_admin!, except: [:new, :create]
 
   # GET /orders
   # GET /orders.json

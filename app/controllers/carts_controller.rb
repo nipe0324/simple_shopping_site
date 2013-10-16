@@ -1,7 +1,4 @@
 class CartsController < ApplicationController
-  skip_before_action :authenticate_user!
-  skip_before_action :authenticate_admin!
-
   # Use
   # GET /carts/1
   # GET /carts/1.json

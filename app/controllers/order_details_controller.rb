@@ -1,13 +1,4 @@
 class OrderDetailsController < ApplicationController
-  skip_before_action :authenticate_user!
-  skip_before_action :authenticate_admin!
-
-  # GET /order_details
-  # GET /order_details.json
-  def index
-    @order_details = OrderDetail.all
-  end
-
   # Use store#index =cart_in=> cart#show
   # POST /order_details
   # POST /order_details.json
