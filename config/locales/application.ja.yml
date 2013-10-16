@@ -1,7 +1,7 @@
 ja:
   layouts:
     application:
-      title:			"タイトル"  #"もったいないから環境問題へ|チャリティオンラインバザー"
+      title:			"シンプルショッピングサイト（デモサイト）"
       home:  			"ホーム"
       about:			"当サイトについて"
       store:			"物品を探す"
@@ -19,9 +19,14 @@ ja:
   controllers:
     # order_details_controller
     create_cart: "カートに商品を登録しました。"   # en =>Order detail was successfully created.
+    # categories_controller
+    destory_category_success: "カテゴリを削除しました。"
+    destory_category_failure: "カテゴリの削除に失敗しました。"
     # products_controller
     create_product: "商品を登録しました。"  # en =>Product was successfully created.
     update_product: "商品を変更しました。"  # en =>Product was successfully updated.
+    destory_product_success: "商品を削除しました。"
+    destory_product_failure: "商品の削除に失敗しました。"
     # carts_controller
     show_cart_error_log:  "無効なURLにアクセスしようとしました。"
     show_cart_error_view: "無効なカートです。"
@@ -29,6 +34,7 @@ ja:
     # orders_controller
     new_order_details_empty:  "カートは空です。"
     create_success:           "ご注文ありがとうございます。" # Order was successfully created.
+    update_success:           "ご注文を更新しました。" # Order was successfully updated.
     shipped:  "発送済みメールを送信しました。" # sent shipped email successfully
     not_ship: "発送済みメールの送信に失敗しました。"
 
@@ -65,7 +71,7 @@ ja:
       name:       "名前"
       updated_at: "更新日"
     action:
-      back:     "一覧"
+      back:     "戻る"
       show:     "詳細"
       new:      "登録"
       edit:     "編集"
@@ -114,16 +120,18 @@ ja:
       address:          "住所"
       pay_type:         "支払方法"
       pay_type_method:  "お支払い方法を選択してください。"
-      submit:           "注文"
+#      submit:           "注文"
       back:             "戻る"
     new:
       title:    "商品を注文" # New order
       summary:  "お客様の注文情報を入力してください。" # nothing
+    edit:
+      title:    "商品を編集" # Edit order
     index:
       title:      "注文一覧"
       # columns
       id:         "ID"
-      user_id:    "ユーザ名"
+      user_name:    "ユーザ名"
       email:      "メールアドレス"
       pay_type:   "支払方法"
       status:     "状況"
@@ -140,6 +148,24 @@ ja:
       canceled:   "キャンセル済み"
       shipped:    "発送済み"
       returned:   "返品済み"
+    show:
+      title:      "注文詳細"
+      id:         "ID"
+      user_name:  "ユーザ名"
+      address:    "住所"
+      pay_type:   "支払方法"
+      status:     "状況"
+      # actions
+      back:       "戻る"
+      edit:       "編集"
+      destroy:    "削除"
+      confirm:    "削除してもよろしいですか？"
+      # value of status
+      received:   "注文済み"
+      canceled:   "キャンセル済み"
+      shipped:    "発送済み"
+      returned:   "返品済み"
+
 
   order_notifier:
     received:

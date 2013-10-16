@@ -27,9 +27,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
-    @order = Order.new(user_id: current_user.id)
-    # TODO 正しくない挙動の可能性がある
-    # @order = Order.find(params[:id])
+    @order = Order.find(params[:id])
   end
 
   # POST /orders
@@ -60,7 +58,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to @order, notice: t('controllers.update_success') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

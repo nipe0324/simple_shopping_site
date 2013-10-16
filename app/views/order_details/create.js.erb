@@ -1,3 +1,4 @@
 $('#cart').html("<%= j render @cart %>");
-// TODO 表示した文字を消す
-$('#contents').prepend('<div class="alert alert-success"><%= j t('.add_product') %></div>');
+var alert = '<div class="alert alert-success"><%= j t('.add_product') %></div>'
+$('#contents').prepend(alert);
+$('.alert-success').fadeOut(2000);

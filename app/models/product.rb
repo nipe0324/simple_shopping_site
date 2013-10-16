@@ -13,8 +13,6 @@ class Product < ActiveRecord::Base
   	if order_details.empty?
   		return true
   	else
-      # TODO　うまく画面に表示されない
-  		errors.add(:base, '品目が存在します')
   		return false
   	end
   end
